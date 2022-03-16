@@ -1,0 +1,19 @@
+<section>
+
+    <article>
+        <h1>Interporlacao {{ url }}</h1>
+    </article>
+
+    <p>result : {{ result() }}</p>
+    <!-- <img src="{{ img }}"> -->
+    <img [src]="img">
+
+    <button class="btn btn-primary" (click)="addCliente()">
+        Adicionar Cliente
+    </button>
+
+    <button class="btn btn-sucess" (click)="addCliente()">
+        Sucess cliente
+    </button>
+
+</section>

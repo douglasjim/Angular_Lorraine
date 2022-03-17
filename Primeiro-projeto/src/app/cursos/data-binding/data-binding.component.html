@@ -7,13 +7,63 @@
     <p>result : {{ result() }}</p>
     <!-- <img src="{{ img }}"> -->
     <img [src]="img">
+    
+    <article>
+        <h3>Event Binding</h3>
+        <button class="btn btn-primary" (click)="addCliente()">
+            Adicionar Cliente
+        </button>
+        <!-- (keyup.enter)="onKeyUpEnter($event.target.value)" -->
+        <input type="text"
+            (keyup)="onKeyUp($event)"
+            (keyup.enter)="onKeyUpEnterVariavelDaView(campoInput.value)"
+            (blur)="inputBlur($event.target.value)"
+            #campoInput
+        >
 
-    <button class="btn btn-primary" (click)="addCliente()">
-        Adicionar Cliente
-    </button>
+        <!-- essa classe highlight é a classe criada la no css desse component, entao quando a variavel isMouseOver for true a classe highlight será aplicada -->
+        
+        <span 
+            (mouseover)="onMouseOver()"
+            (mouseout)="onMouseOver()"
+            [class.highlight]="isMouseOver"
+        >
+            Passando o mouse
+        </span>
+    </article>
+    
 
     <button class="btn btn-sucess" (click)="addCliente()">
         Sucess cliente
     </button>
+
+    <article>
+        <h3>Usando bootstrap</h3>
+        <div>
+            selecione uma classe:
+            <select #variavelClasse (change)="0">
+                <option  class="" role="" value="alert-sucess">Sucess</option>
+                <option class="" role="" value="alert-info">Info</option>
+                <option class="" role="" value="alert-warning">Warning</option>
+                <option class="" role="" value="alert-danger">Danger</option>
+            </select>
+            <br><br>
+
+            <div class="alert {{variavelClasse.value}}">
+                Cor de fundo do texto ira mudar de acordo com o select
+            </div>
+            
+            <!-- isso é apenas de teste, mas em caso de, mostrar ou esconder alguma div usamos apenas o ngif ou hidden que funciona bem melhor -->
+            <div [style.display]="variavelClasse.value == 'alert-danger' ? 'block' : 'none' " class="alert alert-danger">
+                Essa mensagem irá aparecer em caso de erro
+            </div>
+
+            <div [class.alert-sucess]="variavelClasse.value == 'alert-sucess'" class="alert" role="alert">Sucess</div>
+            <div [class.alert-info]="variavelClasse.value == 'alert-info'" class="alert" role="alert">Info</div>
+            <div [class.alert-warning]="variavelClasse.value == 'alert-warning'" class="alert" role="alert">Warning</div>
+            <div [class.alert-danger]="variavelClasse.value == 'alert-danger'" class="alert" role="alert">Danger</div>
+        </div>
+    </article>
+
 
 </section>

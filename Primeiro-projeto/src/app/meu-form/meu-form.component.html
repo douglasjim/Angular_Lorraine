@@ -1,0 +1,11 @@
+<p>meu-form works!</p>
+
+<!-- essa variavel name na linha de baixo vem de um component pai -->
+{{name}}
+
+<!-- readonly serve para que o usuario nao edite esse campo, funciona do mesmo esquema do disabled do BV porem o disabled deixa o campo meio apagado com um cinza claro em cima do campo mostrando que esta desabilitado-->
+<div>
+    <button class="btn btn-primary" (click)="incrementa()" >+</button>
+    <input  type="text" [value]="resultado" readonly />
+    <button class="btn btn-primary" (click)="decrementa()">-</button>
+</div>

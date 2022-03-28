@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CursosComponent } from './cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { FormsModule } from '@angular/forms';
+import { MeuFormComponent } from '../meu-form/meu-form.component';
+import { MeuFormModule } from '../meu-form/meu-form.module';
 
 
 
@@ -10,10 +13,13 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
   declarations: [
     CursosComponent,
     CursoDetalheComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    //MeuFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    MeuFormModule
   ],
   exports:[
     CursosComponent,

@@ -21,6 +21,8 @@
             #campoInput
         >
 
+        <!-- a variavel criada pelo html campoInput podemos usar ela para passar o valor pelo keyup que é chamado -->
+
         <!-- essa classe highlight é a classe criada la no css desse component, entao quando a variavel isMouseOver for true a classe highlight será aplicada -->
         
         <span 
@@ -65,5 +67,42 @@
         </div>
     </article>
 
+
+    <section>
+        <article>
+            <h3></h3>
+            <div>
+                <!-- [value]="nome"
+                (input)="nome = $event.target.value" -->
+
+                <input  type="text" 
+                    [(ngModel)]="nome"                    
+                />
+                
+                <br>
+                Voce digitou: {{nome}}
+
+                <input
+                    type="text"
+                    [(ngModel)]="pessoa.nome"
+                />
+
+                <input
+                    type="text"
+                    [(ngModel)]="pessoa.idade"
+                />
+                
+                Ola meu nome é {{pessoa.nome}} e tenho {{pessoa.idade}} anos
+
+ 
+            </div>
+        </article>
+    </section>
+
+    <app-meu-form [resultado]="resultadoFromOtherComponent" [name]="nameInput" 
+        (mudouValor)="onMudouValor($event)"
+    >
+        
+    </app-meu-form>
 
 </section>

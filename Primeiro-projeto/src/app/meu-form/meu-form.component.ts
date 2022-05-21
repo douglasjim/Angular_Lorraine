@@ -10,6 +10,8 @@ export class MeuFormComponent implements OnInit {
   @Input() name: string;
   @Input() resultado: number = 0;
 
+  //ciclo de vida hooks onde quando entra no software ou faz algo esse ciclo de vida comeca e acaba aula 15 lorraine 
+
   @Output() mudouValor = new EventEmitter(); 
 
   constructor() { }

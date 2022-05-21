@@ -10,7 +10,8 @@ import { CursosService } from './cursos.service'
 export class CursosComponent implements OnInit {
 
 
-
+  //rxjs bibloteca de fora
+  //Como gerar build para producao aula 22 lorraine
 
   nomePortal: string;
   cursos: string[] = ["java2","python","Jython","Flask"] //maneira certa seria colocar isso na service onde irá vir os valores

@@ -11,6 +11,7 @@ export class MeuFormComponent implements OnInit {
   @Input() resultado: number = 0;
 
   //ciclo de vida hooks onde quando entra no software ou faz algo esse ciclo de vida comeca e acaba aula 15 lorraine 
+  //--save para salvar nodependencies ou no devDependices
 
   @Output() mudouValor = new EventEmitter(); 
 
